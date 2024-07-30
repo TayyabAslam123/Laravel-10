@@ -5,6 +5,9 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\SampleController;
 use App\Http\Controllers\MyInvokableController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\BrandController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +28,7 @@ Route::get('/', function () {
 Route::get('/page', [SampleController::class, 'page'])->name('page');
 Route::get('/invoke-example', MyInvokableController::class);
 Route::resource('posts', PostController::class);
+
+Route::resource('cars', CarController::class);
+Route::resource('brands', BrandController::class);
+

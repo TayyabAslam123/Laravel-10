@@ -4,6 +4,7 @@
 1) New way to add js.
 
 In child file use 
+
 @push('scripts')
 @endpush
 
