@@ -12,10 +12,10 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::all();
         $uniqueBrandNames = Brand::select('name')->distinct()->get();
         return $uniqueBrandNames ;
-        return $brands;
+        // $brands = Brand::all();
+        // return $brands;
     }
 
     /**

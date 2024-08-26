@@ -15,7 +15,10 @@ class CarController extends Controller
         // $cars = Car::all();
         // $car = Car::find(1)->with('brand')->first();
         // $car = Car::where('id', 1)->first();
-        $cars = Car::with('brand')->get();
+        // $cars = Car::with('brand')->get();
+        // $cars = Car::with('brand')->whereHas('brand')->get();
+        $cars = Car::with('brand')->whereDoesntHave('brand')->get();
+
         // return $car->brand->name;
         return $cars;
     }
