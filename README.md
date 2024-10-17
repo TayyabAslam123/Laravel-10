@@ -17,3 +17,7 @@ In Laravel, invokable controllers are single-action controllers that contain a s
 php artisan make:controller MyInvokableController --invokable
 
 3) All Relations:
+
+one-one
+one-many
+many-many

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,8 +13,44 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return $posts;
+        ##
+        // $posts = Post::with('comments')->get();
+        // return $posts;
+
+        ##
+        // $post = Post::find(1);
+        // $commentCount = $post->comments()->count();
+        // return $commentCount;
+
+        ##
+        // $post = Post::find(1);
+        // $comments = $post->comments()->pluck('id');
+        // return $comments;
+
+        ##
+        $post = Post::find(1);
+        $comments = [
+            new Comment(['comment' => 'First comment']),
+            new Comment(['comment' => 'Second comment']),
+        ];
+        $post->comments()->saveMany($comments);
+
+        return $post->load('comments');
+
+        ##
+        // $post = Post::find(1);
+        // $post->comments()->delete();
+        // return $post->load('comments');
+
+        ##
+        // $post = Post::find(1);
+        // $comment = $post->comments()->firstOrCreate(
+        //     ['comment' => 'yolo'],
+        //     ['post_id' => $post->id]
+        // );
+        
+        // return $post->load('comments');
+
     }
 
     /**

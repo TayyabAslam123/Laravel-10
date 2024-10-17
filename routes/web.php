@@ -29,9 +29,9 @@ Route::get('/', function () {
 Route::get('/page', [SampleController::class, 'page'])->name('page');
 Route::get('/invoke-example', MyInvokableController::class);
 
+//one-one relation
 Route::resource('cars', CarController::class);
 Route::resource('brands', BrandController::class);
-
-
+//one-many relation
 Route::resource('posts', PostController::class);
 Route::resource('comment', CommentController::class);

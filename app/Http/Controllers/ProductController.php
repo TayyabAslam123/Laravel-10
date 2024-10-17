@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $post = Comment::with('post')->get();
-        return $post;
+        //
     }
 
     /**
@@ -35,7 +34,7 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
+    public function show(Product $product)
     {
         //
     }
@@ -43,7 +42,7 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comment $comment)
+    public function edit(Product $product)
     {
         //
     }
@@ -51,7 +50,7 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -59,7 +58,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comment $comment)
+    public function destroy(Product $product)
     {
         //
     }
