@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    protected $hidden = [
+        'pivot'
+    ];
+
+    public function category()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
 }

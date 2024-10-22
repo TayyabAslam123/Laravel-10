@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -35,3 +36,5 @@ Route::resource('brands', BrandController::class);
 //one-many relation
 Route::resource('posts', PostController::class);
 Route::resource('comment', CommentController::class);
+//many-many relation
+Route::resource('products', ProductController::class);
