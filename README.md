@@ -19,5 +19,10 @@ php artisan make:controller MyInvokableController --invokable
 3) All Relations:
 
 one-one
+Example: Car -> Brand
+
 one-many
+Example: Posts -> Comments
+
 many-many
+Example: Products -> Categories ( pivot table: category_product)

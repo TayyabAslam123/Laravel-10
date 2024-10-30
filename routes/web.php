@@ -10,6 +10,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ParentModelController;
 
 
 /*
@@ -40,3 +41,5 @@ Route::resource('comment', CommentController::class);
 //many-many relation
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
+//
+Route::resource('parents', ParentModelController::class);
