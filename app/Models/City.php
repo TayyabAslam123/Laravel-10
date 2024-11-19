@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ParentModel extends Model
+class City extends Model
 {
     use HasFactory;
+    protected $hidden = ['laravel_through_key'];
 
-    public function student()
+    public function state()
     {
-        return $this->hasOne('App\Models\Student');
-        
+        return $this->belongsTo(State::class);
     }
+
 }

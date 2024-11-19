@@ -11,6 +11,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ParentModelController;
+use App\Http\Controllers\RelationShipController;
 
 
 /*
@@ -43,3 +44,6 @@ Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
 //
 Route::resource('parents', ParentModelController::class);
+//
+Route::get('has-through', [RelationShipController::class, 'sampleHasThrough']);
+Route::get('has-many-through', [RelationShipController::class, 'sampleHasManyThrough']);
