@@ -25,10 +25,10 @@ class CarController extends Controller
         // $hasBrand = $car->brand()->exists();
         // return $hasBrand;
 
-        // $cars = Car::with('brand')->get();
+        $cars = Car::with('brand')->get();
         // $cars = Car::with('brand')->whereHas('brand')->get();
         // $cars = Car::with('brand')->whereDoesntHave('brand')->get();
-        // return $cars;
+        return $cars;
 
         ##
     }

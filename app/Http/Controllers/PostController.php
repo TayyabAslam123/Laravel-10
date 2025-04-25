@@ -28,14 +28,14 @@ class PostController extends Controller
         // return $comments;
 
         ##
-        $post = Post::find(1);
-        $comments = [
-            new Comment(['comment' => 'First comment']),
-            new Comment(['comment' => 'Second comment']),
-        ];
-        $post->comments()->saveMany($comments);
+        // $post = Post::find(1);
+        // $comments = [
+        //     new Comment(['comment' => 'First comment']),
+        //     new Comment(['comment' => 'Second comment']),
+        // ];
+        // $post->comments()->saveMany($comments);
 
-        return $post->load('comments');
+        // return $post->load('comments');
 
         ##
         // $post = Post::find(1);
@@ -48,8 +48,16 @@ class PostController extends Controller
         //     ['comment' => 'yolo'],
         //     ['post_id' => $post->id]
         // );
+
+        ##
+        // $post = Post::has('comments', '>=', 1)->get();
+
+        ##
+        $posts = Post::whereHas('comments', function($query) {
+            $query->where('post_id', 1);
+         })->get();
         
-        // return $post->load('comments');
+        return $posts->load('comments');
 
     }
 

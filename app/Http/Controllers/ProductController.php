@@ -12,7 +12,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->get();
+        // $products = Product::with('category')->get();
+
+        ## Only load useful data
+        $products = Product::with('category:name,slug')->get();
+
+        ## Advanced Querying
+        $products = Product::with('category')->whereHas('category', function($query) {
+            $query->whereIn('category_id', [1]);
+        })->get();
+        
         return $products;
     }
 
