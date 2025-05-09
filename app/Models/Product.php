@@ -17,4 +17,9 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Models\Category');
     }
+
+    public function media(){
+        return $this->hasMany('App\Models\Media');
+    }
+    
 }

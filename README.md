@@ -19,10 +19,10 @@ php artisan make:controller MyInvokableController --invokable
 3) All Relations:
 
 one-one
-Example: Car -> Brand
+Example: Car (hasOne) -> Brand (belongsTo)
 
 one-many
-Example: Posts -> Comments
+Example: Posts (hasMany)-> Comments (belongsTo)
 
 many-many
-Example: Products -> Categories ( pivot table: category_product)
+Example: Products ( belongsToMany ) -> Categories ( belongsToMany ) ==>( pivot table: category_product)

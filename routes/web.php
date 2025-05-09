@@ -45,5 +45,5 @@ Route::resource('categories', CategoryController::class);
 //
 Route::resource('parents', ParentModelController::class);
 //
-Route::get('has-through', [RelationShipController::class, 'sampleHasThrough']);
 Route::get('has-many-through', [RelationShipController::class, 'sampleHasManyThrough']);
+// Route::get('has-many-through', [RelationShipController::class, 'sampleHasManyThrough']);

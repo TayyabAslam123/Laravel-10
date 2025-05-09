@@ -13,18 +13,24 @@ use Illuminate\Http\Request;
 
 class RelationShipController extends Controller
 {
-    public function sampleHasThrough()  {
+    public function sampleHasManyThrough()  {
             
+        // $country = Country::with('states')->get();
+        // return $country;
+      
+        // $states  = State::with('cities')->get();
+        // return $states;
+
         $country  = Country::with('cities')->get();
         return $country;
         
     }
 
-    public function sampleHasManyThrough()  {
+    // public function sampleHasManyThrough()  {
             
-        $author  = Author::with('books','reviews')->get();
-        return $author;
+    //     $author  = Author::with('books','reviews')->get();
+    //     return $author;
         
-    }
+    // }
 
 }

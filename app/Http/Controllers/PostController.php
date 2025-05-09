@@ -52,11 +52,22 @@ class PostController extends Controller
         ##
         // $post = Post::has('comments', '>=', 1)->get();
 
-        ##
+        ## 
+        // $posts = Post::whereHas('comments', function($query) {
+        //     $query->where('post_id', 1);
+        //  })->get();
+        
+        ## get all posts, For each post, only loads comments where post_id = 1
+        // $posts = Post::with(['comments' => function($query) {
+        //     $query->where('post_id', 1);
+        // }])->get();
+
+        ## if you want to only get posts that have comments with post_id = 1, you need to use whereHas():
         $posts = Post::whereHas('comments', function($query) {
             $query->where('post_id', 1);
-         })->get();
-        
+        })->with('comments')->get();
+
+        // return $posts;
         return $posts->load('comments');
 
     }
